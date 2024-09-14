@@ -48,7 +48,7 @@ jobs:
       DB_NAME: postgres
       DB_USER: postgres
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      DB_HOST: db
+      DB_HOST: localhost
       DB_PORT: 5432
     steps:
     - name: Checkout code
@@ -70,7 +70,7 @@ jobs:
           echo "Waiting for Postgres..."
           sleep 1
         done
-        
+
     - name: Run tests
       run: |
         python manage.py test
